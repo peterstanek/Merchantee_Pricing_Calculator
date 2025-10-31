@@ -77,80 +77,10 @@
             <h1 class="text-2xl font-semibold text-white-200">Pricing Calculator</h1>
         </header>
 
-        <!-- Hlavný kontajner pre metriky a výsledky: Používame grid s flexboxom pre zarovnanie -->
+        <!-- Hlavný kontajner pre metriky a výsledky: Používame grid na usporiadanie 3 stĺpcov -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- Stĺpec 1: Dynamický Pricing (Produkty) - flex flex-col pre zarovnanie spodného boxu -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 col-span-1 flex flex-col">
-                
-                <!-- Obsah, ktorý má zostať hore -->
-                <div>
-                    <!-- Zmenšené písmo -->
-                    <h3 class="text-lg font-normal mb-4 text-white-100">Počet produktov na Marketplace</h3>
-                    
-                    <div class="slider-group mb-4">
-                        <label for="products" class="block text-sm font-normal mb-1 text-gray-300">(zalistovaných produktov.)</label>
-                        <!-- ZMENA: Min/Max/Step na nelineárne mapovanie -->
-                        <input type="range" id="products" min="0" max="1000" step="1" value="0">
-                        <div class="text-base mt-1 flex justify-between"> <!-- Zmenšené písmo -->
-                            <span id="products-value" class="font-normal text-gray-300">500</span> ks
-                            <span id="products-tier" class="text-xs text-gray-400 bg-gray-700 py-0.5 px-2 rounded">Tier: 500 - 2,000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FLEXIBLE ROZDELOVAČ: Natlačí súhrnný box na spodok stĺpca -->
-                <div class="flex-grow"></div> 
-
-                <!-- DPUC Result Box (Zarovna sa na spodok) -->
-                <div class="mt-4 p-3 bg-gray-700 rounded-lg text-center">
-                    <p class="text-sm text-gray-400">Cena DP na 1 Krajinu a 1 Trh:</p>
-                    <span id="dpuc-cost" class="text-xl font-semibold text-green-400">49,00 €</span> <!-- Zmenšené písmo -->
-                </div>
-            </div>
-
-            <!-- Stĺpec 2: Dynamic Pricing Markets (Allegro a Kaufland) - PONECHANÝ pôvodný štýl ako referencia -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 col-span-1 flex flex-col">
-                <!-- Zmenšené písmo -->
-                <h3 class="text-lg font-normal mb-4 text-white-200">Na koľkých trhoch chceme DP?</h3>
-                
-                <!-- Allegro Slider -->
-                <div class="slider-group mb-6 p-3 border border-orange-500/50 rounded-lg bg-gray-700/30">
-                    <div class="flex items-center justify-between mb-2">
-                        <label for="allegro" class="text-sm font-normal flex items-center text-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-7-8a7 7 0 1114 0 7 7 0 01-14 0zM8.28 7.37a.75.75 0 00-1.06 1.06L9.94 11l-2.72 2.72a.75.75 0 101.06 1.06L11 12.06l2.72 2.72a.75.75 0 101.06-1.06L12.06 11l2.72-2.72a.75.75 0 10-1.06-1.06L11 9.94l-2.72-2.72z" clip-rule="evenodd" fill="#FF6600"/></svg>
-                            Allegro
-                        </label>
-                        <!-- Zmenšené písmo -->
-                        <span id="allegro-value" class="text-base font-normal text-orange-400">0</span>
-                    </div>
-                    <!-- min="0" -->
-                    <input type="range" id="allegro" min="0" max="4" step="1" value="0">
-                </div>
-
-                <!-- Kaufland Slider -->
-                <div class="slider-group mb-6 p-3 border border-red-500/50 rounded-lg bg-gray-700/30">
-                    <div class="flex items-center justify-between mb-2">
-                        <label for="kaufland" class="text-sm font-normal flex items-center text-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.5 7.5a.5.5 0 00-1 0v4.5a.5.5 0 001 0V7.5zm3.5 0a.5.5 0 00-1 0v4.5a.5.5 0 001 0V7.5z" clip-rule="evenodd" fill="#DC2626"/></svg>
-                            Kaufland
-                        </label>
-                        <!-- Zmenšené písmo -->
-                        <span id="kaufland-value" class="text-base font-normal text-red-400">0</span>
-                    </div>
-                    <!-- min="0" -->
-                    <input type="range" id="kaufland" min="0" max="9" step="1" value="0">
-                </div>
-                
-                <!-- Celkový počet trhov s DP: ostáva na svojom mieste -->
-                <div class="mt-auto p-3 bg-gray-700 rounded-lg text-center">
-                    <p class="text-sm text-gray-400">Celkový počet trhov s DP:</p>
-                    <!-- Zmenšené písmo -->
-                    <span id="markets-total" class="text-xl font-bold text-white-200">0</span> ks
-                </div>
-            </div>
-
-            <!-- Stĺpec 3: Základná cena systému (Objednávky) & Výsledok - flex flex-col pre zarovnanie spodného boxu -->
+            <!-- STĹPEC 1 (Pôvodne 3): Základná cena systému (Objednávky) & Výsledok -->
             <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 col-span-1 flex flex-col">
                 
                 <!-- Obsah, ktorý má zostať hore -->
@@ -177,6 +107,76 @@
                     <p class="text-sm text-gray-400">Základná cena systému:</p>
                     <!-- Zmenšené písmo -->
                     <span id="bsp-cost" class="text-xl font-semibold text-green-400">149,00 €</span>
+                </div>
+            </div>
+
+            <!-- STĹPEC 2 (Pôvodne 1): Dynamický Pricing (Produkty) -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 col-span-1 flex flex-col">
+                
+                <!-- Obsah, ktorý má zostať hore -->
+                <div>
+                    <!-- Zmenšené písmo -->
+                    <h3 class="text-lg font-normal mb-4 text-white-100">Koľko máme produktov?</h3>
+                    
+                    <div class="slider-group mb-4">
+                        <label for="products" class="block text-sm font-normal mb-1 text-gray-300">(zalistovaných produktov.)</label>
+                        <!-- ZMENA: Min/Max/Step na nelineárne mapovanie -->
+                        <input type="range" id="products" min="0" max="1000" step="1" value="0">
+                        <div class="text-base mt-1 flex justify-between"> <!-- Zmenšené písmo -->
+                            <span id="products-value" class="font-normal text-gray-300">500</span> ks
+                            <span id="products-tier" class="text-xs text-gray-400 bg-gray-700 py-0.5 px-2 rounded">Tier: 500 - 2,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FLEXIBLE ROZDELOVAČ: Natlačí súhrnný box na spodok stĺpca -->
+                <div class="flex-grow"></div> 
+
+                <!-- DPUC Result Box (Zarovna sa na spodok) -->
+                <div class="mt-4 p-3 bg-gray-700 rounded-lg text-center">
+                    <p class="text-sm text-gray-400">Cena DP na 1 Krajinu a 1 Trh:</p>
+                    <span id="dpuc-cost" class="text-xl font-semibold text-green-400">49,00 €</span> <!-- Zmenšené písmo -->
+                </div>
+            </div>
+
+            <!-- STĹPEC 3 (Pôvodne 2): Dynamic Pricing Markets (Allegro a Kaufland) -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 col-span-1 flex flex-col">
+                <!-- Zmenšené písmo -->
+                <h3 class="text-lg font-normal mb-4 text-white-200">Na koľkých trhoch chceme DP?</h3>
+                
+                <!-- Allegro Slider -->
+                <div class="slider-group mb-6 p-3 border border-orange-500/50 rounded-lg bg-gray-700/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <!-- ODSTRÁNENÉ SVG IKONY -->
+                        <label for="allegro" class="text-sm font-normal flex items-center text-gray-300">
+                            Allegro
+                        </label>
+                        <!-- Zmenšené písmo -->
+                        <span id="allegro-value" class="text-base font-normal text-orange-400">0</span>
+                    </div>
+                    <!-- min="0" -->
+                    <input type="range" id="allegro" min="0" max="4" step="1" value="0">
+                </div>
+
+                <!-- Kaufland Slider -->
+                <div class="slider-group mb-6 p-3 border border-red-500/50 rounded-lg bg-gray-700/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <!-- ODSTRÁNENÉ SVG IKONY -->
+                        <label for="kaufland" class="text-sm font-normal flex items-center text-gray-300">
+                            Kaufland
+                        </label>
+                        <!-- Zmenšené písmo -->
+                        <span id="kaufland-value" class="text-base font-normal text-red-400">0</span>
+                    </div>
+                    <!-- min="0" -->
+                    <input type="range" id="kaufland" min="0" max="9" step="1" value="0">
+                </div>
+                
+                <!-- Celkový počet trhov s DP: ostáva na svojom mieste -->
+                <div class="mt-auto p-3 bg-gray-700 rounded-lg text-center">
+                    <p class="text-sm text-gray-400">Celkový počet trhov s DP:</p>
+                    <!-- Zmenšené písmo -->
+                    <span id="markets-total" class="text-xl font-bold text-white-200">0</span> ks
                 </div>
             </div>
         </div>
