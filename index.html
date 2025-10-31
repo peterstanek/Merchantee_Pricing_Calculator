@@ -201,7 +201,7 @@
                 <div class="bg-gray-800 p-4 rounded-lg flex justify-between items-center border-l-4 border-yellow-400">
                     <div>
                         <p class="font-normal text-lg text-yellow-400">Mesačné náklady (Prvý Mesiac DP Neplatíte):</p> <!-- Zjemnené bold -->
-                        <p class="text-sm text-gray-400">Dynamický Pricing ZDARMA na všetkých 13 trhoch!</p>
+                        <p class="text-sm text-gray-400">Dynamický Pricing ZDARMA na Všetkých 13 Trhoch!</p>
                     </div>
                     <!-- Zmenšené písmo -->
                     <span id="first-month-price" class="text-3xl font-semibold text-yellow-400">0,00 €</span>
@@ -217,7 +217,7 @@
                             <span id="detail-bsp" class="font-normal">0,00 €</span>
                         </li>
                         <li class="flex justify-between">
-                            <span>Dynamický Pricing (Cena DP x Počet Trhov):</span>
+                            <span>Dynamický Pricing (cena DP x počet trhov):</span>
                             <span id="detail-dynamic-pricing" class="font-normal">0,00 €</span>
                         </li>
                         <!-- Pôvodný riadok "Mesačné náklady Spolu" (detail-total) bol odstránený podľa požiadavky. -->
@@ -227,9 +227,9 @@
                     <!-- Zadarmo hodnota -->
                 <div class="mt-4 pt-4 border-t border-gray-700">
                     <!-- Zmenšené písmo -->
-                    <p class="text-sm text-gray-400 mb-2">Dynamický Pricing na 13 marketoch (limit 2000 produktov) máte v prvom mesiaci zadarmo, hodnota sa mení podľa Vášho zvoleného produktu tieru.</p>
+                    <p class="text-sm text-gray-400 mb-2">V Prvom Mesiaci od Nás Získate Dynamický Pricing Až Pre 13 Trhov a 2,000 Produktov!</p>
                     <li class="flex justify-between font-normal text-yellow-400 list-none">
-                        <span>V Prvom Mesiaci od Nás Dostanete Úplne Zadarmo (Cena DP x 13 Trhov):</span>
+                        <span>V Prvom Mesiaci od Nás Môžete Získať Úplne Zadarmo Až (cena DP x 13 trhov):</span>
                         <span id="detail-value-free" class="font-semibold">0,00 €</span>
                     </li>
                 </div>
@@ -398,7 +398,7 @@
                 elements.detailBsp.classList.remove('text-red-400');
             }
             
-            elements.detailDynamicPricing.textContent = `${totalMarkets}x ${formatPrice(dpuc)} = ${formatPrice(dynamicPricingCost)}`;
+            elements.detailDynamicPricing.textContent = `${totalMarkets} x ${formatPrice(dpuc)} = ${formatPrice(dynamicPricingCost)}`;
             // elements.detailTotal bol odstránený
             elements.detailValueFree.textContent = formatPrice(valueFree);
         }
